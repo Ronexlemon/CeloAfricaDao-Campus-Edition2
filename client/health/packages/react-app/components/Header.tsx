@@ -55,12 +55,12 @@ export default function Header() {
                                 </div>
                                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                                   
-                                        <Link href="/form" className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-100">FORM</Link>
+                                        <Link href="/" className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-100">FORM</Link>
                                    
                                 </div>
                                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                                   
-                                  <Link href="/form" className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-100">RECORD</Link>
+                                  <Link href="/record" className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-100">RECORD</Link>
                              
                           </div>
                             </div>

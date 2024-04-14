@@ -4,7 +4,7 @@ import { useAccount } from "wagmi";
 import AddPatientDetailForm from "@/components/createForm";
 import TableData from "@/components/table";
 
-export default function Home() {
+export default function RecordPage() {
     const [userAddress, setUserAddress] = useState("");
     const [isMounted, setIsMounted] = useState(false);
     const { address, isConnected } = useAccount();
@@ -25,14 +25,14 @@ export default function Home() {
 
     return (
         <>
-        <AddPatientDetailForm/>
-       
+        
+        <TableData/>
         </>
     );
 }
 
 
-Home.getLayout = function getLayout(page:ReactElement) {
+RecordPage.getLayout = function getLayout(page:ReactElement) {
     return (
       <Layout>{page}</Layout>
     )

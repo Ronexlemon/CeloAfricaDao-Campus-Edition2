@@ -25,7 +25,7 @@ const AddPatientDetailForm = () => {
             <input
               type="text"
               placeholder="Urus"
-              className="w-1/2 bg-slate-200 text-center"
+              className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
               {...register("name", { required: true })}
             />
           </div>
@@ -34,7 +34,7 @@ const AddPatientDetailForm = () => {
             <input
               type="number"
               placeholder="$ 1"
-              className="w-1/2 bg-slate-200 text-center"
+              className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
               {...register("bill", { required: true })}
             />
           </div>
@@ -43,7 +43,7 @@ const AddPatientDetailForm = () => {
             <input
               type="number"
               placeholder="1234"
-              className="w-1/2 bg-slate-200 text-center"
+              className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
               {...register("bill", { required: true })}
             />
           </div>
@@ -52,7 +52,7 @@ const AddPatientDetailForm = () => {
             <input
               type="text"
               placeholder="Malaria"
-              className="w-1/2 bg-slate-200 text-center"
+              className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
               {...register("disease", { required: true })}
             />
           </div>
@@ -61,7 +61,7 @@ const AddPatientDetailForm = () => {
             <input
               type="number"
               placeholder="24"
-              className="w-1/2 bg-slate-200 text-center"
+              className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
               {...register("age", { required: true })}
             />
           </div>
@@ -70,7 +70,7 @@ const AddPatientDetailForm = () => {
             <input
               type="text"
               placeholder="Male/Female/Other"
-              className="w-1/2 bg-slate-200 text-center"
+              className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
               {...register("gender", { required: true })}
             />
           </div>
@@ -79,7 +79,7 @@ const AddPatientDetailForm = () => {
             <input
               type="text"
               placeholder="Worse/Fatal/Critical/Good"
-              className="w-1/2 bg-slate-200 text-center"
+              className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
               {...register("condition", { required: true })}
             />
           </div>

@@ -11,6 +11,20 @@ import Stack from '@mui/material/Stack';
 // import DeleteIcon from '@mui/icons-material/Delete';
 // import SendIcon from '@mui/icons-material/Send';
 
+interface PatientData {
+    name: string;
+    bill: number;
+    disease: string;
+    age: number;
+    gender: string;
+    condition: string;
+    status: boolean;
+}
+
+export type PatientDataProps = {
+    patientData: PatientData[];
+}
+
 
 function createData(
     name: string,
@@ -56,11 +70,11 @@ function createData(
     createData('Gingerbread', 356, 16.0, 49, 3.9),
   ];
 
-  const data =[{'name':'john doe','calories':256,'fat':30,'carbs':40,'protein':20},
-  {'name':'john doe','calories':256,'fat':30,'carbs':40,'protein':20},
-  {'name':'john doe','calories':256,'fat':30,'carbs':40,'protein':20},
-  {'name':'john doe','calories':256,'fat':30,'carbs':40,'protein':20},
-  {'name':'john doe','calories':256,'fat':30,'carbs':40,'protein':20}
+  const data: PatientData[] =[{'name':'john doe','bill':256,'disease':"malaria",'age':40,'gender':'Male','condition':"worse",'status':true},
+  {'name':'john doe','bill':256,'disease':"malaria",'age':40,'gender':'Male','condition':"worse",'status':true},
+  {'name':'john doe','bill':256,'disease':"malaria",'age':40,'gender':'Male','condition':"worse",'status':true},
+  {'name':'john doe','bill':256,'disease':"malaria",'age':40,'gender':'Male','condition':"worse",'status':true},
+  {'name':'john doe','bill':256,'disease':"malaria",'age':40,'gender':'Male','condition':"worse",'status':true}
   ]
 
   //string memory _name,uint256 _amountToPay,uint256 _patientId,string memory _diseaseDiagnose,uint256 _age,string memory _gender,string memory _condition
@@ -92,10 +106,12 @@ const TableData =()=>{
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.bill}</TableCell>
+              <TableCell align="right">{row.disease}</TableCell>
+              <TableCell align="right">{row.age}</TableCell>
+              <TableCell align="right">{row.gender}</TableCell>
+              <TableCell align="right">{row.condition}</TableCell>
+              <TableCell align="right">{row.status}</TableCell>
               <TableCell align="right" className="gap-4 m-2">
               <Stack direction="row" spacing={2}>
 
