@@ -17,7 +17,7 @@ contract Health{
     }
 
     //index to track number of patients
-    uint256 public patientTrackIndex;
+    uint256 public patientTrackIndex=0;
 
     //mapping index => patient struct
     mapping(uint => Patient)public patient;
@@ -62,7 +62,7 @@ contract Health{
     //function get all details
     function getAllDetails()public view returns(Patient[] memory pat){
         pat = new Patient[](patientTrackIndex);        
-        for(uint256 i=0;i < patientTrackIndex;i++){            
+        for(uint256 i=0;i < patientTrackIndex;++i){            
                 pat[i] = patient[i];             
 
             
@@ -77,7 +77,7 @@ contract Health{
         
 
         // Shift items in the mapping to fill the gap left by the deleted item
-        for (uint i = index; i < patientTrackIndex - 1; i++) {
+        for (uint i = index; i < patientTrackIndex - 1; ++i) {
             patient[i] = patient[i + 1];
         }
         

@@ -3,27 +3,36 @@ import { useForm } from "react-hook-form";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { useWriteContract } from "wagmi";
-
+import { HealthContractAddress } from "@/pages/constant/address/address";
+import HealthAbi from "../pages/constant/abi/healthAbi.json"
+import { ethers } from "ethers";
 const AddPatientDetailForm = () => {
   const { register, handleSubmit } = useForm();
   const { data: hash, writeContract } = useWriteContract(); 
   
   const [openProgress,setOpenProgress] = useState<boolean>(false);
   const onSubmit = async (formData:any) => {
-
+    //string memory _name,uint256 _amountToPay,uint256 _patientId,string memory _diseaseDiagnose,uint256 _age,string memory _gender,string memory _condition
+    setOpenProgress(true);
     try{
-        // writeContract({
-        //     address: AuctionContractAddress,
-        //     abi:auctionAbi,
-        //     functionName: 'addItem',
-        //     args: [imageUrl.url, formData.year, formData.model, ethers.utils.parseEther(formData.price)],
-        //   });
+        writeContract({
+            address: HealthContractAddress,
+            abi:HealthAbi,
+            functionName: 'addPatientDetails',
+            args: [formData.name, ethers.utils.parseEther(formData.bill), formData.pid,formData.disease ,formData.age,formData.gender,formData.condition],
+          });
+          setTimeout(() => {
+            setOpenProgress(false);
+        }, 10000);
+
 
     }catch(error){
+        console.log("error sending data",error)
+        setOpenProgress(false);
 
     }
-    console.log(formData);
-    setOpenProgress(true);
+    
+    
     
   };
   //string memory _name,uint256 _amountToPay,uint256 _patientId,string memory _diseaseDiagnose,uint256 _age,string memory _gender,string memory _condition
@@ -59,7 +68,7 @@ const AddPatientDetailForm = () => {
               type="number"
               placeholder="1234"
               className="w-1/2 bg-slate-200 text-center h-10 rounded-2xl"
-              {...register("bill", { required: true })}
+              {...register("pid", { required: true })}
             />
           </div>
           <div className="flex justify-around items-center mt-2">

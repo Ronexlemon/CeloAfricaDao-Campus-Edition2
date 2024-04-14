@@ -32,10 +32,10 @@ const connectors = connectorsForWallets(
 
 const config = createConfig({
     connectors,
-    chains: [sepolia],
+    chains: [celoAlfajores],
     transports: {
-        [sepolia.id]: http(),
-        // [celoAlfajores.id]: http(),
+        [celo.id]: http(),
+         [celoAlfajores.id]: http(),
     },
 });
 
