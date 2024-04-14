@@ -2,11 +2,26 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import { useWriteContract } from "wagmi";
 
 const AddPatientDetailForm = () => {
   const { register, handleSubmit } = useForm();
+  const { data: hash, writeContract } = useWriteContract(); 
+  
   const [openProgress,setOpenProgress] = useState<boolean>(false);
   const onSubmit = async (formData:any) => {
+
+    try{
+        // writeContract({
+        //     address: AuctionContractAddress,
+        //     abi:auctionAbi,
+        //     functionName: 'addItem',
+        //     args: [imageUrl.url, formData.year, formData.model, ethers.utils.parseEther(formData.price)],
+        //   });
+
+    }catch(error){
+
+    }
     console.log(formData);
     setOpenProgress(true);
     
