@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { useWriteContract } from "wagmi";
-import { HealthContractAddress } from "@/pages/constant/address/address";
-import HealthAbi from "../pages/constant/abi/healthAbi.json"
+import { HealthContractAddress} from "@/constant/address/address"
+import HealthAbi from "../constant/abi/healthAbi.json"
 import { ethers } from "ethers";
 const AddPatientDetailForm = () => {
   const { register, handleSubmit } = useForm();

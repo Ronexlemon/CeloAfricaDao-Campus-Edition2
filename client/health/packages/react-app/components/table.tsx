@@ -9,8 +9,8 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useReadContract, useWriteContract } from "wagmi";
-import { HealthContractAddress } from "@/pages/constant/address/address";
-import HealthAbi from "../pages/constant/abi/healthAbi.json"
+import { HealthContractAddress } from "@/constant/address/address";
+import HealthAbi from "../constant/abi/healthAbi.json"
 import { BigNumber, ethers } from "ethers";
 import { writeContract } from "viem/actions";
 // import DeleteIcon from '@mui/icons-material/Delete';
